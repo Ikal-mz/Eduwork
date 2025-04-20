@@ -1,51 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Halaman Profil Tanpa CSS</title>
+  <meta charset="UTF-8">
+  <title>Grid Layout dengan Fixed Header</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 20px;
+      padding: 20px;
+      margin-top: 80px; /* kasih jarak supaya nggak ketiban header */
+    }
+
+    .sidebar {
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .main-content {
+      background-color: #e0e0e0;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Section 1: Menu -->
-<table border="1" width="100%">
-    <tr>
-        <td align="center"><a href="#">Beranda</a></td>
-        <td align="center"><a href="#">Tentang</a></td>
-        <td align="center"><a href="#">Biodata</a></td>
-        <td align="center"><a href="#">Portofolio</a></td>
-        <td align="center"><a href="#">Kontak</a></td>
-    </tr>
-</table>
+  <header>
+    Ini Header (Tetap di Atas)
+  </header>
 
-<br>
+  <div class="grid-container">
+    <div class="sidebar">
+      Sidebar
+    </div>
+    <div class="main-content">
+      <p>Konten utama...</p>
+      <p style="margin-top: 1000px;">Scroll ke bawah untuk lihat efek header tetap di atas.</p>
+    </div>
+  </div>
 
-<!-- Section 2: Judul Kiri, Gambar Kanan -->
-<table border="1" width="100%">
-    <tr>
-        <td width="50%">
-            <h2>Halo! Saya John Doe</h2>
-            <p>Selamat datang di halaman profil saya.</p>
-        </td>
-        <td width="50%" align="center">
-            <img src="https://via.placeholder.com/150" alt="Foto Profil">
-        </td>
-    </tr>
-</table>
-
-<br>
-
-<!-- Section 3: Biodata (6 Box) -->
-<table border="1" width="100%">
-    <tr>
-        <td><b>Nama</b></td>
-        <td>John Doe</td>
-        <td><b>Tempat Lahir</b></td>
-        <td>Bandung</td>
-        <td><b>Tanggal Lahir</b></td>
-        <td>1 Januari 2000</td>
-    </tr>
-    <tr>
-        <td><b>Jenis Kelamin</b></td>
-        <td>Laki-laki</td>
-        <td><b>Agama</b></td>
-        <td>Islam</td>
-        <td><b>Kewargan
+</body>
+</html>
